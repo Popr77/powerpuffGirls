@@ -7,3 +7,7 @@
     @apply mx-auto w-full max-w-[1440px] p-6 lg:p-10;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
