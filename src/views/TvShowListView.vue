@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import UpArrow from '@/components/atoms/icons/UpArrow.vue';
 import EpisodeListItem from '@/components/molecules/EpisodeListItem.vue';
+import { useRoute } from 'vue-router';
 import { useTvShowStore } from '@/stores/tvShow';
 import { onMounted, onBeforeUnmount, ref, watchEffect } from 'vue';
 //Package to clean v-html content, to prevent XSS attacks
 import DOMPurify from 'isomorphic-dompurify';
 
 const tvShowStore = useTvShowStore();
+const route = useRoute();
 
 const defaultName = 'The powerpuff Girls';
 const episodesListElement = ref<HTMLDivElement | null>(null);
 const isListInView = ref(false);
 const observerIsSet = ref(false);
 
-tvShowStore.setName(defaultName);
+tvShowStore.setName(route.params.showName ? (route.params.showName as string) : defaultName);
 tvShowStore.syncTvShowData();
 
 let observer: IntersectionObserver;
@@ -80,7 +82,7 @@ watchEffect(() => {
       <a
         href="#tvShowListContainer"
         :class="[
-          'fixed bottom-10 right-10 rounded-full bg-slate-100 p-6 lg:hidden',
+          'fixed bottom-10 right-10 rounded-full bg-slate-100 bg-opacity-50 p-6 duration-300 ease-in-out hover:bg-opacity-85 lg:hidden',
           { hidden: !isListInView },
         ]"
       >

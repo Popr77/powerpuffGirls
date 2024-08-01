@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import type { TTvShowResponse } from '@/types';
+import type { TTvShowResponse, TEpisode } from '@/types';
 
 export const useTvShowStore = defineStore('tvShow', () => {
   const tvShowData = ref<TTvShowResponse>();
@@ -10,6 +10,10 @@ export const useTvShowStore = defineStore('tvShow', () => {
     if (name) {
       tvShowName.value = name;
     }
+  }
+
+  function getEpisodeById(id: number): TEpisode | null {
+    return tvShowData.value?.episodes?.find((episode) => episode.id === id) || null;
   }
 
   async function syncTvShowData(): Promise<void> {
@@ -29,5 +33,5 @@ export const useTvShowStore = defineStore('tvShow', () => {
     }
   }
 
-  return { tvShowData, tvShowName, syncTvShowData, setName };
+  return { tvShowData, tvShowName, syncTvShowData, setName, getEpisodeById };
 });
