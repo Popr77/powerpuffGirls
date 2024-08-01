@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 @layer components {
+  /* Container with a max width of 1440px, w/ padding and centered on the page */
   .container {
     @apply mx-auto w-full max-w-[1440px] p-6 lg:p-10;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    @apply font-mono;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
 }

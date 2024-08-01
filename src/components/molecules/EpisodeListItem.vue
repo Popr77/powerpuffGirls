@@ -13,8 +13,8 @@ const getFormattedDate = (timestamp: string): string => {
 const nameWithEnumeration = `${props.index + 1}. ${props.data.name}`;
 </script>
 <template>
-  <a
-    :href="data.url"
+  <RouterLink
+    :to="`/episode/${data.id}`"
     class="flex snap-start flex-wrap gap-5 rounded border-2 p-4 duration-300 ease-in-out hover:cursor-pointer hover:border-slate-300 hover:bg-slate-50 md:gap-7"
   >
     <div class="min-h-36 w-64">
@@ -34,5 +34,5 @@ const nameWithEnumeration = `${props.index + 1}. ${props.data.name}`;
         <span class="flex justify-end">{{ getFormattedDate(data.airstamp) }}</span>
       </div>
     </div>
-  </a>
+  </RouterLink>
 </template>

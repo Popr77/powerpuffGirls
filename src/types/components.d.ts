@@ -12,7 +12,7 @@ export type TEpisode = {
   rating: {
     average: number;
   };
-  image: {
+  image?: {
     medium: string;
     original: string;
   };

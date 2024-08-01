@@ -1,12 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import TvShowListView from '@/views/TvShowListView.vue';
+import EpisodeView from '@/views/EpisodeView.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'tvShowDetail',
     component: TvShowListView,
+    children: [
+      {
+        path: '/:showName',
+        component: TvShowListView,
+      },
+    ],
+  },
+  {
+    path: '/episode/:episodeId',
+    component: EpisodeView,
   },
 ];
 
