@@ -11,6 +11,7 @@ This project is a Vue 3 application with Vite that showcases details about the T
 
 1. **Dynamic TV Show Search:** The application includes a route parameter that allows passing any TV show name. If the parameter is set, the application searches for and displays details and episodes for that TV show.
 2. **State Management:** The project uses Pinia for state management to handle and maintain the application's state effectively.
+3. **Deployed on Netlify:** The application is deployed on Netlify, allowing easy access and sharing: https://clinquant-cassata-67e1da.netlify.app/
 
 ### Routes
 
