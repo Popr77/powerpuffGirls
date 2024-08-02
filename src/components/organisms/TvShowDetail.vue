@@ -2,14 +2,12 @@
 import UpArrow from '@/components/atoms/icons/UpArrow.vue';
 import EpisodeListItem from '@/components/molecules/EpisodeListItem.vue';
 import NoResult from '@/components/atoms/NoResult.vue';
-import { useRoute } from 'vue-router';
 import { useTvShowStore } from '@/stores/tvShow';
 import { onMounted, onBeforeUnmount, ref, watchEffect } from 'vue';
 //Package to clean v-html content, to prevent XSS attacks
 import DOMPurify from 'isomorphic-dompurify';
 
 const tvShowStore = useTvShowStore();
-const route = useRoute();
 
 const defaultName = 'The powerpuff Girls';
 const episodesListElement = ref<HTMLDivElement | null>(null);
@@ -18,8 +16,7 @@ const observerIsSet = ref(false);
 
 let observer: IntersectionObserver;
 
-//set tv show name, either by the param passed or by the default value
-tvShowStore.setName(route.params.showName ? (route.params.showName as string) : defaultName);
+tvShowStore.setName(defaultName);
 await tvShowStore.syncTvShowData();
 
 onMounted(async () => {

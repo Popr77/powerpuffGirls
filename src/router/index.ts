@@ -10,20 +10,6 @@ const routes = [
     component: TvShowListView,
   },
   {
-    path: '/show',
-    component: TvShowListView,
-    children: [
-      {
-        path: '',
-        component: TvShowListView,
-      },
-      {
-        path: ':showName',
-        component: TvShowListView,
-      },
-    ],
-  },
-  {
     path: '/episode/:episodeId',
     component: EpisodeView,
   },
