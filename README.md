@@ -14,8 +14,8 @@ This project is a Vue 3 application with Vite that showcases details about the T
 
 ### Routes
 
-- **/:** Displays details of the "Powerpuff Girls" TV show by default.
-- **/:name:** Displays details of the TV show specified by the name route parameter.
+- **/:** and **/show:** Displays details of the "Powerpuff Girls" TV show by default.
+- **/show/:showName:** Displays details of the TV show specified by the name route parameter.
 - **/episode/:episodeId:** Displays details of the specified episode from the specified TV show.
 
 ### Dependencies
