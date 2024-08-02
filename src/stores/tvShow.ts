@@ -28,6 +28,7 @@ export const useTvShowStore = defineStore('tvShow', () => {
         const episodesRes = await fetch(`${baseUrl}shows/${tvShowData.value.id}/episodes`);
         tvShowData.value.episodes = await episodesRes.json();
       }
+      return;
     } catch (error) {
       return;
     }

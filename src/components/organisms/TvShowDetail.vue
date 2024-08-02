@@ -18,11 +18,11 @@ const observerIsSet = ref(false);
 
 let observer: IntersectionObserver;
 
-onMounted(() => {
-  //set tv show name, either by the param passed or by the default value
-  tvShowStore.setName(route.params.showName ? (route.params.showName as string) : defaultName);
-  tvShowStore.syncTvShowData();
+//set tv show name, either by the param passed or by the default value
+tvShowStore.setName(route.params.showName ? (route.params.showName as string) : defaultName);
+await tvShowStore.syncTvShowData();
 
+onMounted(async () => {
   /**
    * Intersection Observer for arrow back to top,
    * to only be visible when episodes list is in view
