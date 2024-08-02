@@ -1,18 +1,30 @@
-#  powerpuffGirls
+# Powerpuff Girls
 
-This template should help get you started developing with Vue 3 in Vite.
+## Project Details
 
-## Recommended IDE Setup
+This project is a Vue 3 application with Vite that showcases details about the TV show "Powerpuff Girls." The application features two main pages:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. **TV Show Details Page:** Displays detailed information about the "Powerpuff Girls" TV show.
+2. **Episode Details Page:** Shows details of a chosen episode from the show.
 
-## Type Support for `.vue` Imports in TS
+### Additional Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. **Dynamic TV Show Search:** The application includes a route parameter that allows passing any TV show name. If the parameter is set, the application searches for and displays details and episodes for that TV show.
+2. **State Management:** The project uses Pinia for state management to handle and maintain the application's state effectively.
 
-## Customize configuration
+### Routes
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **/:** and **/show:** Displays details of the "Powerpuff Girls" TV show by default.
+- **/show/:showName:** Displays details of the TV show specified by the name route parameter.
+- **/episode/:episodeId:** Displays details of the specified episode from the specified TV show.
+
+### Dependencies
+
+**Vue 3:** The progressive JavaScript framework used for building the user interface.
+
+**Vite:** The build tool used for the project, offering fast and optimized development.
+
+**Pinia:** A state management library for Vue, providing a simple and effective way to manage state.
 
 ## Project Setup
 
